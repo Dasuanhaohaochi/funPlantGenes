@@ -23,6 +23,27 @@
 
 
 
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/fpg_logo_hu8359c659081f4f0de026e43505d3fe2b_71406_96x0_resize_lanczos_3.png" type="image/x-icon">
+<link rel="icon" href="/images/fpg_logo_hu8359c659081f4f0de026e43505d3fe2b_71406_96x0_resize_lanczos_3.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/fpg_logo_hu8359c659081f4f0de026e43505d3fe2b_71406_48x0_resize_lanczos_3.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/fpg_logo_hu8359c659081f4f0de026e43505d3fe2b_71406_96x0_resize_lanczos_3.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/fpg_logo_hu8359c659081f4f0de026e43505d3fe2b_71406_144x0_resize_lanczos_3.png">
+
+
+
+
+
+
+
+
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta
   name="msapplication-TileColor"
@@ -157,7 +178,7 @@
 
 <script>
   let indexURL = "/searchindex.json";
-  let includeSectionsInSearch = ["INFOR_GENE"];
+  let includeSectionsInSearch = ["genes","pages","sections","submit"];
   let no_results_for = "No results for";
   let empty_search_results_placeholder = "Type something to search..";
 </script>
@@ -263,8 +284,8 @@
 
 
 <link
-  href="/css/style.min.1aee2066428f08203b5e7a16116ffa4f8e0943b1718af299c0a3c1f336f7104a.css"
-  integrity="sha256-Gu4gZkKPCCA7XnoWEW/6T44JQ7FxivKZwKPB8zb3EEo="
+  href="/css/style.min.ad82ade437df81f5c5a48af63c5d6c5da442a19f83f854c3b4168220f83e4f5f.css"
+  integrity="sha256-rYKt5DffgfXFpIr2PF1sXaRCoZ+D+FTDtBaCIPg+T18="
   rel="stylesheet" />
 
 
@@ -289,18 +310,6 @@
       
 
     
-  
-    
-    <div
-  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
-  <span class="block sm:hidden">all</span>
-  <span class="hidden sm:block md:hidden">sm</span>
-  <span class="hidden md:block lg:hidden">md</span>
-  <span class="hidden lg:block xl:hidden">lg</span>
-  <span class="hidden xl:block 2xl:hidden">xl</span>
-  <span class="hidden 2xl:block">2xl</span>
-</div>
-
   
     
     <header
@@ -339,6 +348,23 @@
 
       </a>
     </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
 
     
     <ul
@@ -352,23 +378,9 @@
         
           <li class="nav-item">
             <a
-              class="nav-link active"
-              
-              href="/"
-              >HOME</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
               class="nav-link "
               
-              href="/authors/"
+              href="/species/"
               >SPECIES</a
             >
           </li>
@@ -382,7 +394,7 @@
             <a
               class="nav-link "
               
-              href="/infor_gene/"
+              href="/genes/"
               >GENES</a
             >
           </li>
@@ -406,13 +418,49 @@
         
         
         
-          <li class="nav-item">
-            <a
-              class="nav-link "
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
               
-              href="/abouts/"
-              >ABOUT</a
-            >
+                
+                
+                
+               inline-flex items-center">
+              HELP
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/link/">
+                    LINKS
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/submit/">
+                    SUBMIT
+                  </a>
+                </li>
+              
+            </ul>
           </li>
         
       
@@ -420,26 +468,48 @@
         <li class="mt-4 inline-block lg:hidden">
           <a
             class="btn btn-outline-primary btn-sm"
-            href="/contact">
+            href="/submit">
             Submit
           </a>
         </li>
       
     </ul>
 
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-      
-        
-          <button
-            aria-label="search"
-            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
-            data-target="search-modal">
-            <i class="fa-solid fa-search"></i>
-          </button>
-        
-      
+    
+     
 
-      
+  <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0" style="margin-right: 20px;">
+
+    <input
+  id="search-modal-input"
+  type="text"
+  placeholder="Search"
+  autocomplete="on"
+  aria-label="Search"
+  aria-describedby="Search"
+  placeholder="Search Post ..."
+  style="width: 120px; /* 设置宽度为800像素 */
+         padding: 5px;
+         border: 2px solid #ccc;
+         border-radius: 20px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         outline: none;
+         transition: border-color 0.3s ease-in-out;
+         margin-right: 20px; /* 添加右边距 */"/>
+    <button
+        id="search-button"
+        aria-label="search"
+        class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+        data-target="search-modal"
+        onclick="search()">
+        <i class="fa-solid fa-search"></i>
+    </button>
+
+   
+   </div>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0" style="margin-right: 20px;"></div>
+          
 
 
 
@@ -449,7 +519,7 @@
 
 
 
-      
+          
 
 
   <div class="theme-switcher mr-5">
@@ -512,18 +582,10 @@
   </script>
 
 
-
-
-      
-      
-        <a
-          href="/contact"
-          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
-          Submit
-        </a>
-      
     </div>
+
   </nav>
+       
 </header>
 
     
@@ -539,44 +601,15 @@
       <div data-target="close-search-modal" class="search-modal-overlay"></div>
       <div
         class="search-wrapper"
-        data-image="true"
+        #data-image="true"
         data-description="true"
         data-tags="true"
         data-categories="true">
         <div class="search-wrapper-header">
           <label for="search-modal-input" style="margin-top:-1px">
             <span class="sr-only">search icon</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              height="18"
-              width="18"
-              class="search-icon"
-              data-type="search">
-              <path
-                fill="currentColor"
-                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              height="18"
-              width="18"
-              class="search-reset"
-              data-type="reset">
-              <path
-                fill="currentColor"
-                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
-            </svg>
           </label>
-          <input
-            id="search-modal-input"
-            type="text"
-            data-search-input
-            autocomplete="off"
-            aria-label="Search"
-            placeholder="Search Post ..." />
-        </div>
+        </div>   
         <div class="search-wrapper-body">
           <div class="search-result" data-search-result></div>
           <span class="search-result-empty">
@@ -639,9 +672,9 @@
   
     <main>
       
+
   
-  
-    <section class="section pt-10" style="padding-top: 80px; padding-bottom: 40px;">
+    <section class="section pt-10" style="padding-top: 50px; padding-bottom: 0px;">
       <div class="container">
         <div class="row justify-center">
           <div class="lg:col-7 mb-7 text-center">
@@ -649,7 +682,7 @@
               Welcome to funPlantGenes!
             </h1>
             <p class="mb-8">
-              A comprehensive repository of functionally characterized plant genes, encompassing a wide range of species, provides a valuable and extensive source of information for researchers and scientists.
+              A comprehensive repository of functionally characterized plant genes.
             </p>
             
           </div>
@@ -657,20 +690,54 @@
       </div>
     </section>
   
-  
-  
-  
+
  
 
+
+<div style="text-align: center;">
+  
+  
+  <input
+  id="search-modal-input-2"
+  type="text"
+placeholder="Enter search term"
+data-search-input
+autocomplete="on"
+aria-label="Search"
+aria-describedby="Search"
+placeholder="Search Post ..."
+style="width: 800px; /* 设置宽度为800像素 */
+       padding: 10px;
+       border: 2px solid #ccc;
+       border-radius: 20px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       outline: none;
+       transition: border-color 0.3s ease-in-out;
+       margin-right: 20px; /* 添加右边距 */"/>
+  <button
+      id="search-button-2"
+      aria-label="search"
+      class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+      data-target="search-modal"
+      onclick="search()">
+      <i class="fa-solid fa-search"></i>
+  </button>
   
 
+</div>
 
-  
-  <body>
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=600&t=m&d=kZM6s0pK6F2hXf3Zh6KHqUItH7S6a2GioWYVhE-e4GI&co=1c1c1c&cmo=ea4040&cmn=fc1541&ct=ffffff'></script>
+
+
+
+
+<section class="section" style="withd: 100%; padding-top: 80px; padding-bottom: 0px;">
+  <body >
+   <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=700&t=tt&d=ohql54uOOt6i9CtuAQhzWU44stbZLbckOlpX-yRauGk&co=1173b9"></script>
   </body>
-  
-  
+ </section>
+
+ 
+
   
     
   
@@ -797,8 +864,8 @@
 
 <script
   crossorigin="anonymous"
-  integrity="sha256-h3ZZhUfXj2MQaJsV5ry9jBGD5Qk5/l7/V0/blOx6QmM="
-  src="/js/script.min.8776598547d78f6310689b15e6bcbd8c1183e50939fe5eff574fdb94ec7a4263.js"></script>
+  integrity="sha256-qB/nHiPX28YVBLSaTV&#43;c5NTxlhkrSM0wXi7NrqdMnrw="
+  src="/js/script.min.a81fe71e23d7dbc61504b49a4d5f9ce4d4f196192b48cd305e2ecdaea74c9ebc.js"></script>
 
 
 <script
